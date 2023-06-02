@@ -61,15 +61,10 @@ const Form = ({ isOpen, onClose, onSave, currRow }) => {
     setPhone(currRow.phone)
     setEmail(currRow.email)
     setHobby(currRow.hobby)
-    // console.log(name)
-    // console.log(phone)
-    // console.log(email)
-    // console.log(hobby)
 
   }, [currRow])
   const handleSave = () => {
 
-    // Call the save function passed as a prop
     onSave({
       name : name,
       phone : phone,
@@ -77,13 +72,11 @@ const Form = ({ isOpen, onClose, onSave, currRow }) => {
       hobby : hobby
     });
 
-    // Clear the form inputs
     setName('');
     setPhone('');
     setEmail('');
     setHobby('');
 
-    // Close the form
     onClose();
   };
 

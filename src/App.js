@@ -57,10 +57,10 @@ const App = () => {
   }, []);
 
   const fetchData = async () => {
-    axios.get('http://localhost:5000/')
+    axios.get('https://it-studio-backend.onrender.com/')
       .then((res) => { 
         setData(res.data);
-        console.log(data)
+        // console.log(data)
 
       }).catch((err) => { console.log(err)})
   };
@@ -75,7 +75,7 @@ const App = () => {
 
   const handleDeleteRow = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/${id}`); // Replace with your API endpoint
+      await axios.delete(`https://it-studio-backend.onrender.com/${id}`); // Replace with your API endpoint
       fetchData();
     } catch (error) {
       console.error(error);
@@ -89,12 +89,11 @@ const App = () => {
 
   const handleUpdateData =  async (formData) => {
     try {
-      await axios.put(`http://localhost:5000/${currRow._id}`, formData);
+      await axios.put(`https://it-studio-backend.onrender.com/${currRow._id}`, formData);
       fetchData();
     } catch (error) {
       console.error(error);
     }
-    // console.log(formData)
   };
 
   const handleCloseUpdate = ()=>{
@@ -112,7 +111,7 @@ const App = () => {
 
   const handleSaveData = async (formData) => {
     try {
-      await axios.post(`http://localhost:5000/add`, formData);
+      await axios.post(`https://it-studio-backend.onrender.com/add`, formData);
       fetchData();
     } catch (error) {
       console.error(error);
@@ -122,7 +121,7 @@ const App = () => {
   const sendEmail = async () =>{
     console.log(selectedRows)
     try {
-      await axios.post(`http://localhost:5000/send`, selectedRows);
+      await axios.post(`https://it-studio-backend.onrender.com/send`, selectedRows);
     } catch (error) {
       console.error(error);
     }
